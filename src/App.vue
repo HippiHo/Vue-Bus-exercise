@@ -1,28 +1,88 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <TheNavbar class="color-filter" :changeHeader="changeHeader"/>
+    <TheHeader />
+    <h2>{{ intro }}</h2>
+    <router-view />
+    <TheFooter />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import "@/assets/css/styles.css";
+import TheNavbar from "@/components/TheNavbar.vue";
+import TheHeader from "@/components/TheHeader.vue";
+import TheFooter from "@/components/TheFooter.vue";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
-    HelloWorld
+    TheNavbar,
+    TheHeader,
+    TheFooter
+  },
+  data() {
+    return {
+      intro: "Welcome"
+    };
+  },
+  methods: {
+    changeHeader(newHeader) {
+      this.intro = newHeader
+    }
   }
-}
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Biryani", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 20px;
+  display: block;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+a {
+  color: #c55c1b;
+  font-weight: bold;
+}
+
+.color-filter {
+  filter: hue-rotate(180deg);
+}
+
+@media screen and (min-width: 400px) {
+  #app {
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 460px) {
+  #app {
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 550px) {
+  #app {
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 690px) {
+  #app {
+    padding-bottom: 12px;
+  }
+}
+
+@media screen and (min-width: 1350px) {
+  #app {
+    width: 1350px;
+    margin: 0 auto;
+  }
 }
 </style>

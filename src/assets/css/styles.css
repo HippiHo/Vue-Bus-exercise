@@ -1,0 +1,20 @@
+/* General */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightgrey;
+  box-sizing: border-box;
+}
+
+/* Helpers */
+
+.margin-top--16 {
+  margin-top: 16px;
+}
+
+.margin-bottom--16 {
+  margin-bottom: 16px;
+}
