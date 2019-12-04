@@ -1,12 +1,10 @@
 <template>
-  <article>
+  <article class="product-page">
     <TheProduct />
-    <TheProduct class="color-filter" />
   </article>
 </template>
 
 <script>
-import "@/assets/css/styles.css";
 import TheProduct from "@/components/TheProduct.vue";
 
 export default {
@@ -17,6 +15,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

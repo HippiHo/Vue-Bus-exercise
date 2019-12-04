@@ -15,7 +15,6 @@
 </template>
 
 <script>
-import "@/assets/css/styles.css";
 
 export default {
   name: "TheAboutPage",
@@ -28,5 +27,6 @@ p {
   text-align: left;
   width: 75%;
   margin: 0 auto;
+  padding-bottom: 16px;
 }
 </style>

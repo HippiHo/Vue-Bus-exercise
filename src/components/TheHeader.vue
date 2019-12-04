@@ -8,10 +8,8 @@
 <script>
 export default {
   name: "TheHeader",
-  data() {
-    return {
-      product: "Bus"
-    };
+  props: {
+    product: String
   }
 };
 </script>

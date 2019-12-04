@@ -16,7 +16,6 @@ export default {
 <style>
 footer {
   font-size: 14px;
-  margin-top: 16px;
   padding: 16px;
   border-top: 1px solid black;
   background: linear-gradient(-45deg, #c55c1b, #1b84c5);

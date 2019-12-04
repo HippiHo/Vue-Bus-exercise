@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <TheNavbar class="color-filter" :changeHeader="changeHeader"/>
-    <TheHeader />
+    <TheNavbar class="color-filter--complementary" :changeHeader="changeHeader" />
+    <TheHeader :product="product" />
     <h2>{{ intro }}</h2>
     <router-view />
     <TheFooter />
@@ -23,12 +23,13 @@ export default {
   },
   data() {
     return {
-      intro: "Welcome"
+      intro: "Welcome",
+      product: "Bus" // Todo: Try to find a way to pass that to the product component.
     };
   },
   methods: {
     changeHeader(newHeader) {
-      this.intro = newHeader
+      this.intro = newHeader;
     }
   }
 };
@@ -41,7 +42,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 20px;
-  display: block;
   padding-left: 14px;
   padding-right: 14px;
 }
@@ -49,10 +49,6 @@ export default {
 a {
   color: #c55c1b;
   font-weight: bold;
-}
-
-.color-filter {
-  filter: hue-rotate(180deg);
 }
 
 @media screen and (min-width: 400px) {

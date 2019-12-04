@@ -1,4 +1,4 @@
-# vue-tutorial
+# Bus Exercise
 
 ## Project setup
 ```
