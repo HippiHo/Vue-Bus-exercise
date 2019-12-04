@@ -1,27 +1,26 @@
 <template>
-  <footer>Created by {{ author }}</footer>
+  <footer>Created by EM in {{ date }}</footer>
 </template>
 
 <script>
-
 export default {
-  name: 'TheFooter',
+  name: "TheFooter",
   data() {
-      return {
-          author: 'E. Maschke'
-      }
+    return {
+      date: "2019"
+    };
   }
-}
-
+};
 </script>
 
 <style>
-
 footer {
-    font-size: 14px;
-    margin-top: 16px;
-    padding-top: 16px;
-    border-top: 1px solid black;
+  font-size: 14px;
+  margin-top: 16px;
+  padding: 16px;
+  border-top: 1px solid black;
+  background: linear-gradient(-45deg, #c55c1b, #1b84c5);
+  color: white;
+  font-size: 12px;
 }
-
 </style>
