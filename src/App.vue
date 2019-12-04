@@ -1,8 +1,11 @@
 <template>
   <div id="app">
-    <TheNavbar class="color-filter--complementary" :changeHeader="changeHeader" />
+    <TheNavbar
+      class="color-filter--complementary"
+      :changeHeader="changeHeader"
+    />
     <TheHeader :product="product" />
-    <h2>{{ intro }}</h2>
+    <h2>《 {{ intro }} 》</h2>
     <router-view />
     <TheFooter />
   </div>
@@ -44,6 +47,7 @@ export default {
   margin-top: 20px;
   padding-left: 14px;
   padding-right: 14px;
+  padding-bottom: 12px;
 }
 
 a {
@@ -51,27 +55,51 @@ a {
   font-weight: bold;
 }
 
-@media screen and (min-width: 400px) {
-  #app {
-    padding-bottom: 12px;
-  }
+h2 {
+  color: black;
+  font-size: 24px;
+  line-height: 1.2;
+  margin-bottom: 16px;
 }
 
-@media screen and (min-width: 460px) {
-  #app {
-    padding-bottom: 12px;
-  }
+h3 {
+  color: black;
+  font-size: 22px;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  margin-top: 0;
 }
 
-@media screen and (min-width: 550px) {
-  #app {
-    padding-bottom: 12px;
+  p {
+    font-size: 12px;
+    margin: 0;
   }
-}
+
+  ul {
+    list-style: outside square;
+    margin-left: 0;
+  }
+
+  li {
+    font-size: 12px;
+  }
 
 @media screen and (min-width: 690px) {
-  #app {
-    padding-bottom: 12px;
+  h2 {
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  h3 {
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    border-bottom: 1px solid black;
+  }
+
+  p, li {
+    font-size: 18px;
   }
 }
 

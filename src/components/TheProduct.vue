@@ -8,9 +8,33 @@
       ></figcaption>
     </figure>
     <div class="product_info">
-      {{ product.toUpperCase() }}
-      <div class="color-switch" @click="toOrange()"></div>
-      <div class="color-switch blue" @click="toBlue()"></div>
+      <h3>
+        {{ product.toUpperCase() }}
+        <span v-if="parked" class="status">parked</span>
+        <span v-else class="status">on the road</span>
+      </h3>
+      <p>
+        Available colors:
+      </p>
+      <div class="color-switch">
+        <div class="color-switch_button" @click="toOrange()"></div>
+        <div class="color-switch_button blue" @click="toBlue()"></div>
+      </div>
+      <p>
+        Info:
+      </p>
+      <ul>
+        <li v-for="(detail, index) in details" :key="index">{{ detail }}</li>
+      </ul>
+      <div class="parking-space">
+        <p>
+          Available parking spots:
+        </p>
+        <input type="number" v-model="parkingSpots" />
+        <button @click="parkBus()" :class="imageClass()">
+          Park {{ product }}
+        </button>
+      </div>
     </div>
   </section>
 </template>
@@ -23,7 +47,10 @@ export default {
       product: "bus",
       copyright:
         'Photo by revac film\'s&photography from <a href="https://www.pexels.com/de-de/foto/auto-fahrzeug-bus-reise-54278/">Pexels</a>',
-      blue: false
+      blue: false,
+      details: ["Max. 130 km/h", "Screens", "Sockets", "Wifi"],
+      parked: false,
+      parkingSpots: 10
     };
   },
   methods: {
@@ -37,10 +64,18 @@ export default {
       return imageClass;
     },
     toOrange() {
-      this.blue = false
+      this.blue = false;
+      this.parked = false;
     },
     toBlue() {
-      this.blue = true
+      this.blue = true;
+      this.parked = false;
+    },
+    parkBus() {
+      this.parked = true;
+      if (this.parkingSpots > 0) {
+        this.parkingSpots -= 1;
+      }
     }
   }
 };
@@ -53,12 +88,13 @@ export default {
   display: flex;
   width: 100%;
   flex-flow: column;
+  align-items: center;
 }
 
 .product_image {
   border: black solid 2px;
   box-shadow: 0px 0.5px 1px #d8d8d8;
-  width: 100%;
+  width: 90%;
 }
 
 .product_image_caption {
@@ -67,7 +103,6 @@ export default {
 }
 
 .product_visuals {
-  justify-content: flex-start;
   border-bottom: 1px solid black;
   padding-bottom: 16px;
 }
@@ -82,14 +117,39 @@ export default {
   padding: 16px;
 }
 
-.color-switch {
-  width: 30px;
+.status {
+  color: darkgrey;
+  font-size: 16px;
+}
+
+.color-switch_button {
+  width: 130px;
   height: 30px;
   background-color: #c55c1b;
+  display: inline-block;
+  border: 1px solid black;
+}
+
+.color-switch_button:focus {
+  border: 2px solid black;
 }
 
 .blue {
   filter: hue-rotate(180deg);
+}
+
+button {
+  background-color: #c55c1b;
+  color: white;
+  font-size: 16px;
+}
+
+input,
+button {
+  padding: 16px;
+  width: 130px !important;
+  font-weight: bold;
+  border: 1px solid black;
 }
 
 @media screen and (min-width: 690px) {

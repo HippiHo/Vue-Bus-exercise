@@ -65,6 +65,10 @@ nav {
   background-color: grey;
   color: white;
 }
+.nav_list_item_link:focus {
+  background-color: #c55c1b;
+  color: white;
+}
 
 @media screen and (min-width: 1350px) {
   nav {
