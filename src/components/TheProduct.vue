@@ -1,13 +1,17 @@
 <template>
   <section class="product">
     <figure class="product_visuals">
-      <img src="../assets/bus.jpg" alt="Bus" :class="imageClass()"/>
+      <img src="../assets/bus.jpg" alt="Bus" :class="imageClass()" />
       <figcaption
         class="margin-top--16 product_image_caption"
         v-html="copyright"
       ></figcaption>
     </figure>
-    <div class="product_info">{{ product.toUpperCase() }}</div>
+    <div class="product_info">
+      {{ product.toUpperCase() }}
+      <div class="color-switch" @click="toOrange()"></div>
+      <div class="color-switch blue" @click="toBlue()"></div>
+    </div>
   </section>
 </template>
 
@@ -23,14 +27,20 @@ export default {
     };
   },
   methods: {
-    imageClass(){
+    imageClass() {
       let imageClass = "product_image";
 
       if (this.blue) {
-        imageClass += " " + "color-filter--complementary"
+        imageClass += " " + "color-filter--complementary";
       }
 
       return imageClass;
+    },
+    toOrange() {
+      this.blue = false
+    },
+    toBlue() {
+      this.blue = true
     }
   }
 };
@@ -72,6 +82,15 @@ export default {
   padding: 16px;
 }
 
+.color-switch {
+  width: 30px;
+  height: 30px;
+  background-color: #c55c1b;
+}
+
+.blue {
+  filter: hue-rotate(180deg);
+}
 
 @media screen and (min-width: 690px) {
   .product {
