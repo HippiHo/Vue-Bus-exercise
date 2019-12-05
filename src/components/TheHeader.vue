@@ -51,6 +51,12 @@ hr {
   }
 }
 
+@media screen and (min-width: 1350px) {
+  h1 {
+    font-size: 64px;
+  }
+}
+
 @media screen and (max-width: 270px) {
   header {
     margin-top: 110px;

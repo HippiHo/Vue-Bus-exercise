@@ -84,7 +84,6 @@ export default {
 <style>
 .product {
   background-color: white;
-  padding: 16px;
   display: flex;
   width: 100%;
   flex-flow: column;
@@ -94,17 +93,22 @@ export default {
 .product_image {
   border: black solid 2px;
   box-shadow: 0px 0.5px 1px #d8d8d8;
-  width: 90%;
+  width: 100%;
 }
 
 .product_image_caption {
   font-weight: 500;
-  font-size: 12px;
+  font-size: 10px;
+  text-align: left;
 }
 
 .product_visuals {
   border-bottom: 1px solid black;
   padding-bottom: 16px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .product_visuals,
@@ -155,11 +159,13 @@ button {
 @media screen and (min-width: 690px) {
   .product {
     flex-direction: row;
+    align-items: flex-start;
   }
 
   .product_visuals {
     border: none;
     justify-content: flex-start;
+    align-content: flex-start;
   }
 
   .product_info {
@@ -167,7 +173,7 @@ button {
   }
 
   .product_image_caption {
-    font-size: 16px;
+    font-size: 14px;
   }
 }
 </style>

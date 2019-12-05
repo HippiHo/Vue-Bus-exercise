@@ -44,7 +44,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 16px;
   padding-left: 14px;
   padding-right: 14px;
   padding-bottom: 12px;
@@ -57,7 +57,7 @@ a {
 
 h2 {
   color: black;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 1.2;
   margin-bottom: 16px;
 }
@@ -70,21 +70,29 @@ h3 {
   margin-top: 0;
 }
 
-  p {
-    font-size: 12px;
-    margin: 0;
-  }
+p {
+  font-size: 12px;
+  margin: 0;
+}
 
-  ul {
-    list-style: outside square;
-    margin-left: 0;
-  }
+ul {
+  list-style: outside square;
+  margin-left: 0;
+}
 
-  li {
-    font-size: 12px;
-  }
+li {
+  font-size: 12px;
+}
+
+article {
+  max-height: 760px;
+}
 
 @media screen and (min-width: 690px) {
+  #app {
+    margin-top: 20px;
+  }
+
   h2 {
     font-size: 32px;
     line-height: 1.2;
@@ -98,8 +106,13 @@ h3 {
     border-bottom: 1px solid black;
   }
 
-  p, li {
+  p,
+  li {
     font-size: 18px;
+  }
+
+  article {
+    max-height: 580px;
   }
 }
 
@@ -107,6 +120,11 @@ h3 {
   #app {
     width: 1350px;
     margin: 0 auto;
+  }
+
+  article {
+    padding-top: 16px;
+    height: 500px;
   }
 }
 </style>
