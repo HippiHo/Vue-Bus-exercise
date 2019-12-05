@@ -1,6 +1,6 @@
 <template>
   <section class="product">
-    <figure class="product_visuals">
+    <figure class="product__visuals">
       <img src="../assets/bus.jpg" alt="Bus" :class="imageClass()" />
       <figcaption
         class="margin-top--16 product_visuals_caption"
@@ -94,7 +94,7 @@ export default {
   margin: 16px 0;
 }
 
-.product_visuals {
+.product__visuals {
   border-bottom: 1px solid black;
   padding-bottom: 16px;
   display: flex;
@@ -115,7 +115,7 @@ export default {
   text-align: left;
 }
 
-.product_visuals,
+.product__visuals,
 .product_info {
   width: 80%;
 }
@@ -166,7 +166,7 @@ button {
     align-items: flex-start;
   }
 
-  .product_visuals {
+  .product__visuals {
     border: none;
     justify-content: flex-start;
     align-content: flex-start;
