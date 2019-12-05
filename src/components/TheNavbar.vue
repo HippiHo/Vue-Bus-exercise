@@ -77,15 +77,11 @@ nav {
   display: flex;
   flex-direction: row;
   padding: 12px;
-  align-items: center;
+  justify-content: center;
 }
 
 .nav_mobile {
   display: none;
-}
-
-.nav_big-screen {
-  align-self: center; /* Todo: center */
 }
 
 .icon {
