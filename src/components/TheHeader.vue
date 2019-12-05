@@ -17,7 +17,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 header {
-  margin-top: 100px;
+  margin-top: 140px;
   z-index: 100;
 }
 
@@ -57,9 +57,9 @@ hr {
   }
 }
 
-@media screen and (max-width: 270px) {
+@media screen and (max-width: 420px) {
   header {
-    margin-top: 110px;
+    margin-top: 20px;
   }
 }
 </style>

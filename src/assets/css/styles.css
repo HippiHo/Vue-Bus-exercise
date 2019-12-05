@@ -1,12 +1,13 @@
 /* General */
 
-* {
-  box-sizing: border-box;
+html {
+  -webkit-text-size-adjust: 100%; /* 2 */
 }
 
 body {
   background-color: lightgrey;
   box-sizing: border-box;
+  margin: 0;
 }
 
 /* Helpers */
