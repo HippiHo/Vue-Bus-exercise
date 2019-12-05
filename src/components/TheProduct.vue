@@ -3,22 +3,25 @@
     <figure class="product_visuals">
       <img src="../assets/bus.jpg" alt="Bus" :class="imageClass()" />
       <figcaption
-        class="margin-top--16 product_image_caption"
+        class="margin-top--16 product_visuals_caption"
         v-html="copyright"
       ></figcaption>
     </figure>
     <div class="product_info">
       <h3>
         {{ product.toUpperCase() }}
-        <span v-if="parked" class="status">parked</span>
+        <span v-if="parked" class="product_info_status">parked</span>
         <span v-else class="status">on the road</span>
       </h3>
       <p>
         Available colors:
       </p>
-      <div class="color-switch">
-        <div class="color-switch_button" @click="toOrange()"></div>
-        <div class="color-switch_button blue" @click="toBlue()"></div>
+      <div class="product_info_color-switch">
+        <div class="product_info_color-switch_button" @click="toOrange()"></div>
+        <div
+          class="product_info_color-switch_button blue"
+          @click="toBlue()"
+        ></div>
       </div>
       <p>
         Info:
@@ -26,7 +29,7 @@
       <ul>
         <li v-for="(detail, index) in details" :key="index">{{ detail }}</li>
       </ul>
-      <div class="parking-space">
+      <div class="product_info_parking-space">
         <p>
           Available parking spots:
         </p>
@@ -55,7 +58,7 @@ export default {
   },
   methods: {
     imageClass() {
-      let imageClass = "product_image";
+      let imageClass = "product_visuals_image";
 
       if (this.blue) {
         imageClass += " " + "color-filter--complementary";
@@ -88,18 +91,7 @@ export default {
   width: 100%;
   flex-flow: column;
   align-items: center;
-}
-
-.product_image {
-  border: black solid 2px;
-  box-shadow: 0px 0.5px 1px #d8d8d8;
-  width: 100%;
-}
-
-.product_image_caption {
-  font-weight: 500;
-  font-size: 10px;
-  text-align: left;
+  margin: 16px 0;
 }
 
 .product_visuals {
@@ -109,6 +101,18 @@ export default {
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
+}
+
+.product_visuals_image {
+  border: black solid 2px;
+  box-shadow: 0px 0.5px 1px #d8d8d8;
+  width: 100%;
+}
+
+.product_visuals_caption {
+  font-weight: 500;
+  font-size: 10px;
+  text-align: left;
 }
 
 .product_visuals,
@@ -121,12 +125,12 @@ export default {
   padding: 16px;
 }
 
-.status {
+.product_info_status {
   color: darkgrey;
   font-size: 16px;
 }
 
-.color-switch_button {
+.product_info_color-switch_button {
   width: 130px;
   height: 30px;
   background-color: #c55c1b;
@@ -134,7 +138,7 @@ export default {
   border: 1px solid black;
 }
 
-.color-switch_button:focus {
+.product_info_color-switch_button:focus {
   border: 2px solid black;
 }
 
@@ -168,12 +172,12 @@ button {
     align-content: flex-start;
   }
 
-  .product_info {
-    justify-content: flex-end;
+  .product_visuals_caption {
+    font-size: 14px;
   }
 
-  .product_image_caption {
-    font-size: 14px;
+  .product_info {
+    justify-content: flex-end;
   }
 }
 </style>
