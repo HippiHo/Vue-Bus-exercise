@@ -17,7 +17,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 header {
-  margin-top: 140px;
+  margin-top: 110px;
   z-index: 100;
 }
 
