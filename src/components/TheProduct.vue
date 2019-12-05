@@ -11,7 +11,7 @@
       <h3>
         {{ product.toUpperCase() }}
         <span v-if="parked" class="product_info_status">parked</span>
-        <span v-else class="status">on the road</span>
+        <span v-else class="product_info_status">on the road</span>
       </h3>
       <p>
         Available colors:
@@ -126,7 +126,7 @@ export default {
 }
 
 .product_info_status {
-  color: darkgrey;
+  color: darkgrey; 
   font-size: 16px;
 }
 
