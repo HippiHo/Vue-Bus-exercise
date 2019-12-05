@@ -53,7 +53,8 @@ export default {
   },
   data() {
     return {
-      hidden: false
+      hidden: false,
+      mobile: false
     };
   },
   methods: {
