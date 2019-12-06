@@ -1,5 +1,7 @@
 # Bus Exercise
 
+![alt bus app](./assets/bus-page.jpg)
+
 ## Project setup
 ```
 npm install
