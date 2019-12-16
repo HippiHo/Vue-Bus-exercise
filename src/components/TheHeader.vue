@@ -9,9 +9,13 @@
 export default {
   name: "TheHeader",
   props: {
-    product: String
+    product: {
+      type: String,
+      required: true,
+      default: "Bus"
+    }
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
