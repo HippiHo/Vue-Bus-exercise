@@ -1,12 +1,6 @@
 <template>
   <section class="product">
-    <figure class="product__visuals">
-      <img src="../assets/bus.jpg" alt="Bus" :class="imageClass()" />
-      <figcaption
-        class="margin-top--16 product_visuals_caption"
-        v-html="copyright"
-      ></figcaption>
-    </figure>
+    <TheImage :blue="blue" />
     <div class="product_info">
       <h3>
         {{ product.toUpperCase() }}
@@ -19,7 +13,7 @@
       <div class="product_info_color-switch">
         <div class="product_info_color-switch_button" @click="toOrange()"></div>
         <div
-          class="product_info_color-switch_button blue"
+          class="product_info_color-switch_button --blue"
           @click="toBlue()"
         ></div>
       </div>
@@ -34,7 +28,7 @@
           Available parking spots:
         </p>
         <input type="number" v-model="parkingSpots" />
-        <button @click="parkBus()" :class="imageClass()">
+        <button @click="parkBus()" >
           Park {{ product }}
         </button>
       </div>
@@ -43,13 +37,16 @@
 </template>
 
 <script>
+import TheImage from "@/components/TheImage.vue";
+
 export default {
   name: "TheProduct",
+    components: {
+    TheImage
+  },
   data() {
     return {
       product: "bus",
-      copyright:
-        'Photo by revac film\'s&photography from <a href="https://www.pexels.com/de-de/foto/auto-fahrzeug-bus-reise-54278/">Pexels</a>',
       blue: false,
       details: ["Max. 130 km/h", "Screens", "Sockets", "Wifi"],
       parked: false,
@@ -57,15 +54,6 @@ export default {
     };
   },
   methods: {
-    imageClass() {
-      let imageClass = "product_visuals_image";
-
-      if (this.blue) {
-        imageClass += " " + "color-filter--complementary";
-      }
-
-      return imageClass;
-    },
     toOrange() {
       this.blue = false;
       this.parked = false;
@@ -94,28 +82,6 @@ export default {
   margin: 16px 0;
 }
 
-.product__visuals {
-  border-bottom: 1px solid black;
-  padding-bottom: 16px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
-.product_visuals_image {
-  border: black solid 2px;
-  box-shadow: 0px 0.5px 1px #d8d8d8;
-  width: 100%;
-}
-
-.product_visuals_caption {
-  font-weight: 500;
-  font-size: 10px;
-  text-align: left;
-}
-
-.product__visuals,
 .product_info {
   width: 80%;
 }
@@ -126,7 +92,7 @@ export default {
 }
 
 .product_info_status {
-  color: darkgrey; 
+  color: darkgrey;
   font-size: 16px;
 }
 
@@ -142,7 +108,7 @@ export default {
   border: 2px solid black;
 }
 
-.blue {
+.--blue {
   filter: hue-rotate(180deg);
 }
 
@@ -164,16 +130,6 @@ button {
   .product {
     flex-direction: row;
     align-items: flex-start;
-  }
-
-  .product__visuals {
-    border: none;
-    justify-content: flex-start;
-    align-content: flex-start;
-  }
-
-  .product_visuals_caption {
-    font-size: 14px;
   }
 
   .product_info {
