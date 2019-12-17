@@ -27,7 +27,7 @@ export default {
   data() {
     return {
       intro: "Welcome",
-      product: "Bus" // Todo: Try to find a way to pass that to the product component.
+      product: this.$store.state.product
     };
   },
   methods: {

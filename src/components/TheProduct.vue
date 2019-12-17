@@ -46,7 +46,7 @@ export default {
   },
   data() {
     return {
-      product: "bus",
+      product: this.$store.state.product,
       blue: false,
       details: ["Max. 130 km/h", "Screens", "Sockets", "Wifi"],
       parked: false,
